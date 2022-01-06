@@ -13,4 +13,4 @@
 	});
 </script>
 
-<button on:click={toggleMode}>{darkMode ? '🌙' : '🔆'}</button>
+<button on:click={toggleMode}>{!darkMode ? '🌙' : '🔆'}</button>
