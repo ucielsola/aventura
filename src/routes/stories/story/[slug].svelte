@@ -7,43 +7,42 @@
 				headers: {}
 			}
 		);
-		const { stories } = await graphcms.request(
-			`query Stories {
-				stories {
+		const { story } = await graphcms.request(
+			`query Story($id: ID!) {
+				story(where: { id: $id }) {
 					id
 					rated_18
 					title
 					description
 					pages
 				}
-			}`
+			}`,
+			{
+				id: ctx.params.slug
+			}
 		);
 		return {
 			props: {
-				stories
+				story
 			}
 		};
 	}
 </script>
 
 <script>
-	export let stories;
+	export let story;
+	const { id, title } = story;
 </script>
 
 <svelte:head>
-	<title>Uciel Sola | 📝 Blog</title>
+	<title>U.S. | 📝 {title}</title>
 </svelte:head>
 
 <section>
-	{#each stories as { id, rated_18, title, description, pages }}
-		<ul>
-			<li>{id}</li>
-			<li>{rated_18}</li>
-			<li>{title}</li>
-			<li>{description}</li>
-			<li>{pages}</li>
-
-			<a href="/all_stories/story/{id}">Read Story</a>
-		</ul>
-	{/each}
+	<article class="container mt-16">
+		<div class="text-center">
+			<h3 class="title text-3xl ">{title}</h3>
+			<!-- <span><em>{new Date(date).toLocaleDateString()}</em></span> -->
+		</div>
+	</article>
 </section>

@@ -10,3 +10,9 @@
 </main>
 
 <Footer />
+
+<style>
+	main {
+		margin-top: 5rem; /* nav height */
+	}
+</style>

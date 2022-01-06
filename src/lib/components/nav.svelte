@@ -15,9 +15,9 @@
 		</label>
 		<div class="collapsible-body">
 			<ul class="inline">
-				<li><a href="/stories/">Stories</a></li>
+				<li><a href="/stories">Stories</a></li>
 				<li><a href="/about">About</a></li>
-				<li><a href="https://github.com/ucielsola">Github</a></li>
+				<li><a href="https://github.com/ucielsola" target="_blank">Github</a></li>
 				<!-- <ColorToggle /> -->
 			</ul>
 		</div>
