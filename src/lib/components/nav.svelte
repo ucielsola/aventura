@@ -18,7 +18,7 @@
 				<li><a href="/stories">Stories</a></li>
 				<li><a href="/about">About</a></li>
 				<li><a href="https://github.com/ucielsola" target="_blank">Github</a></li>
-				<!-- <ColorToggle /> -->
+				<ColorToggle />
 			</ul>
 		</div>
 	</div>

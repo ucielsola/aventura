@@ -1,17 +1,16 @@
 <script>
 	import { onMount } from 'svelte';
-	let emoji;
-	let darkMode;
+
+	let darkMode = false;
 	let toggleMode;
-    
-	onMount(async () => {
-		const htmlTag = document.querySelector('html');
-		emoji = darkMode === 'dark' ? '🌙 ' : '☀';
-		let darkMode = false;
+	onMount(() => {
+		const html = document.querySelector('html');
 		toggleMode = () => {
+			html.classList.toggle('dark');
 			darkMode = !darkMode;
+			console.log(darkMode);
 		};
 	});
 </script>
 
-<button on:click={toggleMode}>{emoji}</button>
+<button on:click={toggleMode}>{darkMode ? '🌙' : '🔆'}</button>

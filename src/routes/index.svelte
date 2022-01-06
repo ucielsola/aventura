@@ -2,7 +2,7 @@
 	import Hand from '../assets/hand.svg';
 </script>
 
-<div class="paper container">
+<section class="paper section container">
 	<h1>Welcome to YourAdventure</h1>
 	<p>
 		If you loved the <span class="bold">Choose Your Own Adventure</span> books (or any other
@@ -11,9 +11,9 @@
 	</p>
 	<img src={Hand} alt="" />
     
-</div>
+</section>
 
-<style>
+<style section>
 	.bold {
 		font-weight: 600;
 	}

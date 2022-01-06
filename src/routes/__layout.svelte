@@ -6,13 +6,18 @@
 <Nav />
 
 <main>
+	<div class="spacer" />
 	<slot />
 </main>
 
 <Footer />
 
 <style>
-	main {
+	.spacer {
 		margin-top: 5rem; /* nav height */
+	}
+
+	button {
+		margin-top: 10rem;
 	}
 </style>
