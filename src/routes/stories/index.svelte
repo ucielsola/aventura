@@ -31,7 +31,7 @@
 </script>
 
 <svelte:head>
-	<title>Uciel Sola | 📝 Blog</title>
+	<title>YoutStory | All stories</title>
 </svelte:head>
 
 <section>

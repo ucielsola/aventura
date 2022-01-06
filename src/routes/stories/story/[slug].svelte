@@ -30,19 +30,25 @@
 </script>
 
 <script>
+	import StoryPage from '$lib/components/storyPage.svelte';
+
 	export let story;
-	const { id, title } = story;
+	const { id, rated_18, title, description, pages } = story;
 </script>
 
 <svelte:head>
-	<title>U.S. | 📝 {title}</title>
+	<title>YoutStory | 📝 {title}</title>
 </svelte:head>
 
 <section>
 	<article class="container mt-16">
 		<div class="text-center">
-			<h3 class="title text-3xl ">{title}</h3>
 			<!-- <span><em>{new Date(date).toLocaleDateString()}</em></span> -->
+			<h2 class="title text-3xl ">{title}</h2>
+			<h4>{description}</h4>
+			<hr />
 		</div>
+		<StoryPage page={pages[0]} />
 	</article>
 </section>
+
