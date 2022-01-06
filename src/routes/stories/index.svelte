@@ -43,7 +43,7 @@
 			<li>{description}</li>
 			<li>{pages}</li>
 
-			<a href="/all_stories/story/{id}">Read Story</a>
+			<a href="/stories/story/{id}">Read Story</a>
 		</ul>
 	{/each}
 </section>
