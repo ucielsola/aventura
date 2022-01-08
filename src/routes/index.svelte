@@ -3,7 +3,7 @@
 </script>
 
 <section class="paper section container">
-	<h1>Welcome to YourAdventure</h1>
+	<h1>Welcome to Aventura!</h1>
 	<p>
 		If you loved the <span class="bold">Choose Your Own Adventure</span> books (or any other
 		simliar), this is your place. Here you will find amazing adventures to read online, or perhaps a
