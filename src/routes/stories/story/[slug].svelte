@@ -50,10 +50,9 @@
 </script>
 
 <svelte:head>
-	<title>YoutStory | 📝 {title}</title>
+	<title>Aventura! | 📝 {title}</title>
 </svelte:head>
 
-<section>
 	<article class="container mt-16">
 		<div class="text-center">
 			<!-- <span><em>{new Date(date).toLocaleDateString()}</em></span> -->
@@ -74,7 +73,6 @@
 			<StoryPage page={pages[0]} />
 		</div>
 	</article>
-</section>
 
 <style>
 	header {

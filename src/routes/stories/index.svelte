@@ -48,7 +48,7 @@
 </script>
 
 <svelte:head>
-	<title>YoutStory | All stories</title>
+	<title>Aventura! | All stories</title>
 </svelte:head>
 
 <section class="paper container">
