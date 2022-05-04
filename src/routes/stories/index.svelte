@@ -43,8 +43,6 @@
 
 <script>
 	export let stories;
-	const loading = stories ? false : true;
-	console.log(stories);
 </script>
 
 <svelte:head>
@@ -52,7 +50,7 @@
 </svelte:head>
 
 <section class="paper container">
-	{#if loading}
+	{#if !stories}
 		<h1>Loading...</h1>
 	{:else}
 		{#each stories as { id, rated_18, title, description, pages, cover, author, publish_date }}
