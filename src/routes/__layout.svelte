@@ -16,8 +16,4 @@
 	.spacer {
 		margin-top: 5rem; /* nav height */
 	}
-
-	button {
-		margin-top: 10rem;
-	}
 </style>
