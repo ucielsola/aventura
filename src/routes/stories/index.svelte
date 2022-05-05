@@ -1,41 +1,6 @@
-<script context="module">
-	import { client } from '$lib/services/graphql-client.js';
-
-	export async function load(ctx) {
-		const { stories } = await client.request(
-			`query Stories {
-				stories {
-					id
-					rated_18
-					title
-					description
-					pages
-					cover {
-      					id
-      					url
-    				}
-					author {
-						id
-						full_name
-						author_link
-						author_avatar {
-       						 url
-      					} 
-    				}
-					publish_date
-				}
-			}`
-		);
-		return {
-			props: {
-				stories
-			}
-		};
-	}
-</script>
-
 <script>
-	export let stories;
+	import fetchStories from '$lib/stores/stories.js';
+	const [stories, loading, error, getStories] = fetchStories();
 </script>
 
 <svelte:head>
@@ -43,26 +8,34 @@
 </svelte:head>
 
 <section class="paper container">
-	{#if !stories}
+	{#if $loading}
 		<h1>Loading...</h1>
+	{:else if $error}
+		Error: {$error}
 	{:else}
-		{#each stories as { id, rated_18, title, description, pages, cover, author, publish_date }}
-			<div class="row flex-center">
-				<div class="card">
-					<img src={cover.url} alt={title} />
+		{#await $stories}
+			<h1>Loading...</h1>
+		{:then name}
+			{#each $stories.stories as { id, rated_18, title, description, pages, cover, author, publish_date }}
+				<div class="row flex-center">
+					<div class="card">
+						<img src={cover.url} alt={title} />
 
-					<div class="card-body">
-						<h4 class="card-title">{title}</h4>
-						<h5 class="card-subtitle">
-							<a href={author.author_link.url}>{author.full_name}</a> - {publish_date}
-						</h5>
-						<p class="card-text">
-							{description}
-						</p>
-						<a href="/stories/story/{id}"><button>Read story</button></a>
+						<div class="card-body">
+							<h4 class="card-title">{title}</h4>
+							<h5 class="card-subtitle">
+								<a href={author.author_link.url}>{author.full_name}</a> - {publish_date}
+							</h5>
+							<p class="card-text">
+								{description}
+							</p>
+							<a href="/stories/story/{id}"><button>Read story</button></a>
+						</div>
 					</div>
 				</div>
-			</div>
-		{/each}
+			{/each}
+		{:catch name}
+			<h1>wrong...</h1>
+		{/await}
 	{/if}
 </section>
