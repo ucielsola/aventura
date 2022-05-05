@@ -8,7 +8,6 @@
 		toggleMode = () => {
 			html.classList.toggle('dark');
 			darkMode = !darkMode;
-			// console.log(darkMode);
 		};
 	});
 </script>

@@ -44,7 +44,6 @@
 	let activePage = pages[0];
 	const goToPage = (event) => {
 		let page = event.detail.pageNum;
-		console.log(event);
 		activePage = pages[Number(page)];
 	};
 </script>
@@ -56,14 +55,18 @@
 <article class="container mt-16">
 	<div class="text-center">
 		<!-- <span><em>{new Date(date).toLocaleDateString()}</em></span> -->
-		<header>
+		<header class="paper">
 			<img src={cover.url} alt={title} />
 			<div class="col">
 				<h2 class="title text-3xl ">{title}</h2>
 				<h4>{description}</h4>
 				<div class="author">
 					<img src={author.author_avatar.url} alt={author.full_name} />
-					<p>Writen by <a href={author.author_link.url}>{author.full_name}</a></p>
+					<p>
+						Writen by <a href={author.author_link.url} title={author.author_link.text}
+							>{author.full_name}</a
+						>
+					</p>
 				</div>
 			</div>
 		</header>

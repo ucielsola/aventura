@@ -9,7 +9,6 @@
 		});
 	};
 	export let page;
-	$: console.log(page);
 </script>
 
 <p>{page.text}</p>
