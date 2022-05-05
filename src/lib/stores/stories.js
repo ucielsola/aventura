@@ -4,7 +4,6 @@ import { client, storiesQuery, storyQuery } from '$lib/services/graphql-client.j
 export default function () {
 	const stories = writable();
 	const story = writable();
-	const testVar = writable('');
 
 	async function getStories() {
 		try {
