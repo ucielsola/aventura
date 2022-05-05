@@ -1,10 +1,10 @@
 <script>
 	import { fade } from 'svelte/transition';
 	import fetchStories from '$lib/stores/stories.js';
-	import Spinner from '../../lib/utils/spinner.svelte';
-	const [stories, loading, error, getStories] = fetchStories();
-	
-	getStories()
+	import Spinner from '$lib/utils/spinner.svelte';
+	const [getStories, stories] = fetchStories();
+
+	getStories();
 </script>
 
 <svelte:head>
@@ -12,13 +12,11 @@
 </svelte:head>
 
 <section class="paper container">
-	{#if $loading}
+	{#if !$stories}
 		<div class="centered" transition:fade={{ duration: 400 }}><Spinner /></div>
-	{:else if $error}
-		<h1 transition:fade={{ duration: 400 }}>Error: {$error}</h1>
 	{:else}
 		{#await $stories then}
-			{#each $stories.stories as { id, rated_18, title, description, pages, cover, author, publish_date }}
+			{#each $stories as { id, rated_18, title, description, pages, cover, author, publish_date }}
 				<div class="row flex-center" in:fade={{ delay: 500 }}>
 					<div class="card">
 						<img src={cover.url} alt={title} />
