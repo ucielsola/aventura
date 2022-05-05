@@ -1,15 +1,8 @@
 <script context="module">
-	import { GraphQLClient } from 'graphql-request';
+	import { client } from '$lib/services/graphql-client.js';
 
 	export async function load(ctx) {
-		const graphcms = new GraphQLClient(
-			'https://api-sa-east-1.graphcms.com/v2/cky0q3buw3y0b01xm3ggfb2te/master',
-			{
-				headers: {}
-			}
-		);
-
-		const { stories } = await graphcms.request(
+		const { stories } = await client.request(
 			`query Stories {
 				stories {
 					id
@@ -73,9 +66,3 @@
 		{/each}
 	{/if}
 </section>
-
-<style>
-	.card {
-		widows: 20rem;
-	}
-</style>
