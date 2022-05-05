@@ -11,7 +11,7 @@
 	{#if $loading}
 		<h1>Loading...</h1>
 	{:else if $error}
-		Error: {$error}
+		<h1>Error: {$error}</h1>
 	{:else}
 		{#await $stories}
 			<h1>Loading...</h1>
@@ -34,8 +34,6 @@
 					</div>
 				</div>
 			{/each}
-		{:catch name}
-			<h1>wrong...</h1>
 		{/await}
 	{/if}
 </section>
