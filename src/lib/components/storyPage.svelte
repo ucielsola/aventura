@@ -7,4 +7,6 @@
 
 <p>{page.text}</p>
 
-<PageActions action={page.actions} />
+{#each page.actions as { action_id, action_text, action_target }}
+	<button>{action_text}</button>
+{/each}
