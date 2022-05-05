@@ -2,6 +2,10 @@
 	import Hand from '../assets/hand.svg';
 </script>
 
+<svelte:head>
+	<title>Aventura! - Uciel Sola</title>
+</svelte:head>
+
 <section class="paper section container">
 	<h1>Welcome to Aventura!</h1>
 	<p>
