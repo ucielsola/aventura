@@ -19,6 +19,18 @@ export default function () {
 		loading.set(false);
 	}
 
-	getStories();
-	return [stories, loading, error, getStories];
+	async function getStoryById() {
+		loading.set(true);
+		error.set(false);
+		try {
+			const response = await client.request(storiesQuery);
+			stories.set(await response);
+			// console.log(response);
+		} catch (e) {
+			error.set(e);
+		}
+		loading.set(false);
+	}
+
+	return [stories, loading, error, getStories, getStoryById];
 }

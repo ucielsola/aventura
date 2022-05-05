@@ -3,6 +3,8 @@
 	import fetchStories from '$lib/stores/stories.js';
 	import Spinner from '../../lib/utils/spinner.svelte';
 	const [stories, loading, error, getStories] = fetchStories();
+	
+	getStories()
 </script>
 
 <svelte:head>
