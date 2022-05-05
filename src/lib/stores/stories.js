@@ -12,8 +12,7 @@ export default function () {
 		try {
 			const response = await client.request(storiesQuery);
 			stories.set(await response);
-			console.log(response);
-			// stories.set(await client.request(storiesQuery));
+			// console.log(response);
 		} catch (e) {
 			error.set(e);
 		}
